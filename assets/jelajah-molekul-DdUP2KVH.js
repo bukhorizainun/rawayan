@@ -1,0 +1,29 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/scene-CW-JL88P.js","assets/three.core-zJY0D0oi.js","assets/OrbitControls-BokKmm2T.js"])))=>i.map(i=>d[i]);
+import{n as e}from"./math-BcwMNRSQ.js";import{i as t,n,t as r}from"./shell-DgwTLdl8.js";import{t as i}from"./preload-helper-ildnd_tl.js";n(`jelajah`),document.body.dataset.area=`sains`;var a=document.getElementById(`main`),o=e=>{let t=(Math.cos(e*Math.PI/180)+.5)/1.5,n=Math.sqrt(t),r=Math.sqrt(1-t);return[0,120,240].map(e=>{let t=e*Math.PI/180;return[r*Math.cos(t),-n,r*Math.sin(t)]})},s=e=>{let t=e/2*Math.PI/180;return[[Math.sin(t),-Math.cos(t),0],[-Math.sin(t),-Math.cos(t),0]]},c={el:`H`,color:16052712,r:.32},l={el:`O`,color:13715803,r:.48},u=[{id:`co2`,name:`Karbon dioksida`,formula:`CO_2`,shape:`Linear`,angle:`180°`,pairs:`2 kelompok ikatan, 0 PEB`,spec:{center:{el:`C`,color:3882832,r:.45},ligand:l,bonds:[[1,0,0],[-1,0,0]],lone:[],double:!0},note:`Dua ikatan rangkap saling menjauh sejauh mungkin, yaitu ke arah berlawanan.`},{id:`bf3`,name:`Boron trifluorida`,formula:`BF_3`,shape:`Segitiga datar`,angle:`120°`,pairs:`3 PEI, 0 PEB`,spec:{center:{el:`B`,color:15250592,r:.42},ligand:{el:`F`,color:10212490,r:.38},bonds:[0,120,240].map(e=>[Math.cos(e*Math.PI/180),0,Math.sin(e*Math.PI/180)]),lone:[]},note:`Tiga pasangan elektron menyebar rata di satu bidang.`},{id:`ch4`,name:`Metana`,formula:`CH_4`,shape:`Tetrahedral`,angle:`109,5°`,pairs:`4 PEI, 0 PEB`,spec:{center:{el:`C`,color:3882832,r:.45},ligand:c,bonds:[[1,1,1],[1,-1,-1],[-1,1,-1],[-1,-1,1]],lone:[]},note:`Empat pasangan elektron menempati sudut-sudut tetrahedron, bukan sudut persegi datar (90°), karena di 3D mereka bisa lebih saling menjauh.`},{id:`nh3`,name:`Amonia`,formula:`NH_3`,shape:`Piramida segitiga`,angle:`107°`,pairs:`3 PEI, 1 PEB`,spec:{center:{el:`N`,color:4016073,r:.46},ligand:c,bonds:o(107),lone:[[0,1,0]]},note:`Satu pasangan elektron bebas (PEB) mendorong lebih kuat daripada pasangan ikatan, sehingga ketiga ikatan sedikit terdesak: 109,5° menjadi 107°.`},{id:`h2o`,name:`Air`,formula:`H_2O`,shape:`Bengkok (huruf V)`,angle:`104,5°`,pairs:`2 PEI, 2 PEB`,spec:{center:l,ligand:c,bonds:s(104.5),lone:[[0,.6,.8],[0,.6,-.8]]},note:`Dua PEB mendesak lebih kuat lagi, jadi sudut H–O–H mengecil menjadi 104,5°. Bentuk bengkok inilah yang membuat molekul air bersifat polar.`}];a.innerHTML=`
+<div class="page-head wrap">
+  <a class="eyebrow" href="${t(`jelajah/`)}" style="text-decoration:none">← Jelajah</a>
+  <h1>Bentuk Molekul</h1>
+  <div class="chip-row" style="margin-bottom:12px"><span class="chip accent">Kimia · Fase F</span><span class="chip">Teori VSEPR</span></div>
+  <p>Pasangan elektron di sekitar atom pusat saling tolak-menolak dan mengambil posisi sejauh mungkin. Dari aturan sederhana itu, muncul bentuk-bentuk molekul. Putar molekulnya dan bandingkan sudutnya.</p>
+</div>
+<div class="wrap sim">
+  <div style="display:grid;gap:var(--s-3)">
+    <div class="sim-stage" style="aspect-ratio:4/3" data-stage></div>
+    <p class="stage-hint">Seret untuk memutar · cubit atau gulir untuk memperbesar · bola jingga transparan = pasangan elektron bebas</p>
+    <p class="text-alt" data-alt aria-live="polite"></p>
+  </div>
+  <div class="sim-panel">
+    <div class="tabs" role="group" aria-label="Pilih molekul" data-tabs>${u.map((e,t)=>`<button type="button" data-i="${t}" aria-pressed="${t===2}" data-f="${e.formula}"></button>`).join(``)}</div>
+    <div class="formula" data-formula></div>
+    <div class="readouts" data-read></div>
+    <p data-note></p>
+    <section>
+      <p class="eyebrow">Pertanyaan untukmu</p>
+      <div class="steps" style="margin-top:12px">
+        <div class="step"><h4>Bandingkan</h4><p style="font-size:var(--fs-sm)">CH₄, NH₃, dan H₂O sama-sama punya 4 pasangan elektron di sekitar atom pusat. Kenapa sudut ikatannya berbeda: 109,5°, 107°, lalu 104,5°?</p></div>
+        <div class="step"><h4>Petunjuk</h4><p style="font-size:var(--fs-sm)">Hitung pasangan elektron bebas (bola jingga) pada setiap molekul. Apa hubungan banyaknya dengan besar sudut?</p></div>
+        <div class="step"><h4>Kaitkan</h4><p style="font-size:var(--fs-sm)">CO₂ dan H₂O sama-sama punya tiga atom. Kenapa CO₂ lurus tetapi H₂O bengkok? Bentuk ini membuat air bisa melarutkan gula dan garam.</p></div>
+      </div>
+    </section>
+  </div>
+</div>`;var d=e=>a.querySelector(e);a.querySelectorAll(`[data-tabs] button`).forEach(t=>e(t,`\mathrm{${t.dataset.f}}`,!1));var f=null;function p(t){let n=u[t];a.querySelectorAll(`[data-tabs] button`).forEach((e,n)=>e.setAttribute(`aria-pressed`,String(n===t))),e(d(`[data-formula]`),`\\mathrm{${n.formula}}\\quad \\text{${n.name}}`),d(`[data-read]`).innerHTML=[[`Bentuk`,n.shape],[`Sudut ikatan`,n.angle],[`Pasangan elektron`,n.pairs]].map(([e,t])=>`<div class="readout"><span>${e}</span><b style="font-size:var(--fs-md)">${r(t)}</b></div>`).join(``),d(`[data-note]`).textContent=n.note,d(`[data-alt]`).textContent=`${n.name} berbentuk ${n.shape.toLowerCase()} dengan sudut ikatan ${n.angle}; ${n.pairs}. ${n.note}`,f?.set(n.spec)}d(`[data-tabs]`).addEventListener(`click`,e=>{let t=e.target.closest(`button[data-i]`);t&&p(+t.dataset.i)}),p(2),new IntersectionObserver(async([e],t)=>{if(!e.isIntersecting)return;t.disconnect();let n=await i(()=>import(`./scene-CW-JL88P.js`),__vite__mapDeps([0,1,2]));if(!n.webgl()){d(`[data-stage]`).innerHTML=`<p class="empty" style="padding:24px">Perangkat ini belum mendukung 3D. Bentuk dan sudutnya tetap bisa dibaca di panel.</p>`;return}f=n.createMoleculeScene(d(`[data-stage]`)),p(+a.querySelector(`[data-tabs] [aria-pressed=true]`).dataset.i)}).observe(d(`[data-stage]`));

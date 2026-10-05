@@ -1,0 +1,29 @@
+import{n as e,r as t}from"./math-BcwMNRSQ.js";import{i as n,n as r,r as i}from"./shell-DgwTLdl8.js";import{n as a,t as o}from"./param-BmOyOyjx.js";r(`jelajah`),document.body.dataset.area=`sains`;var s=document.getElementById(`main`);s.innerHTML=`
+<div class="page-head wrap">
+  <a class="eyebrow" href="${n(`jelajah/`)}" style="text-decoration:none">← Jelajah</a>
+  <h1>Gelombang pada Tali</h1>
+  <div class="chip-row" style="margin-bottom:12px"><span class="chip accent">IPA · Fase D</span><span class="chip">Getaran dan gelombang</span></div>
+  <p>Ujung tali digetarkan naik-turun. Gelombang merambat ke kanan. Tapi apakah tali itu sendiri ikut berpindah ke kanan? Perhatikan titik merah.</p>
+</div>
+<div class="wrap sim">
+  <div style="display:grid;gap:var(--s-3)">
+    <div class="sim-stage" style="aspect-ratio:16/9"><canvas aria-hidden="true"></canvas></div>
+    <div style="display:flex;justify-content:flex-end;gap:6px"><button class="quality" type="button" data-play>Jeda</button><button class="quality" type="button" data-slow>Lambat</button></div>
+    <p class="text-alt" data-alt aria-live="polite"></p>
+  </div>
+  <div class="sim-panel">
+    <div style="display:grid;gap:12px" data-params></div>
+    <div class="formula" data-formula></div>
+    <div class="readouts" data-read></div>
+    <section>
+      <p class="eyebrow">Tebak, amati, jelaskan</p>
+      <div class="steps" style="margin-top:12px">
+        <div class="step"><h4>Tebak dulu</h4><p style="font-size:var(--fs-sm);margin-bottom:8px">Gelombang merambat ke kanan. Titik merah pada tali akan ....</p>
+          <div class="choice-list">${[`ikut terbawa ke kanan`,`hanya naik-turun di tempatnya`,`bergerak ke kiri`].map((e,t)=>`<label><input type="radio" name="pred" value="${t}"> ${e}</label>`).join(``)}</div></div>
+        <div class="step" data-s2 aria-disabled="true"><h4>Amati</h4><div data-obs style="font-size:var(--fs-sm)">Pilih tebakanmu dulu, lalu lihat titik merah dengan mode lambat.</div></div>
+        <div class="step" data-s3 aria-disabled="true"><h4>Jelaskan</h4><div data-exp style="font-size:var(--fs-sm)"></div></div>
+      </div>
+    </section>
+  </div>
+</div>`;var c=e=>s.querySelector(e),l=.5,u=1,d=2,f=!i(),p=!1,m=0,h=a({id:`A`,label:`Amplitudo A`,min:.1,max:1,step:.1,value:l,format:e=>o(e,1)+` m`},e=>{l=e,v()}),g=a({id:`f`,label:`Frekuensi f`,min:.5,max:3,step:.25,value:u,format:e=>o(e)+` Hz`},e=>{u=e,v()}),_=a({id:`l`,label:`Panjang gelombang λ`,min:1,max:4,step:.5,value:d,format:e=>o(e,1)+` m`},e=>{d=e,v()});c(`[data-params]`).append(h.el,g.el,_.el);function v(){let t=d*u;e(c(`[data-formula]`),`v = \\lambda f = ${o(d,1).replace(`,`,`{,}`)} \\times ${o(u).replace(`,`,`{,}`)} = ${o(t).replace(`,`,`{,}`)}\\ \\text{m/s}`),c(`[data-read]`).innerHTML=[[`Cepat rambat`,`${o(t)} m/s`],[`Periode T`,`${o(1/u,2)} s`],[`Amplitudo`,`${o(l,1)} m`]].map(([e,t])=>`<div class="readout"><span>${e}</span><b>${t}</b></div>`).join(``),c(`[data-alt]`).textContent=`Gelombang dengan amplitudo ${o(l,1)} m, frekuensi ${o(u)} Hz, dan panjang gelombang ${o(d,1)} m merambat dengan kecepatan ${o(t)} m/s. Titik merah hanya bergerak naik-turun.`,S()}var y=c(`canvas`),b=y.getContext(`2d`),x=8;function S(){let e=Math.min(2,devicePixelRatio||1),t=y.clientWidth,n=y.clientHeight;y.width!==Math.round(t*e)&&(y.width=t*e,y.height=n*e),b.setTransform(e,0,0,e,0,0),b.clearRect(0,0,t,n);let r=e=>30+e/x*(t-60),i=n*.35/1,a=n/2,o=e=>l*Math.sin(2*Math.PI*e/d-2*Math.PI*u*m);b.strokeStyle=`rgba(27,30,43,.15)`,b.setLineDash([4,6]),b.beginPath(),b.moveTo(r(0),a),b.lineTo(r(x),a),b.stroke(),b.setLineDash([]),b.strokeStyle=`#0f8a7e`,b.lineWidth=3,b.beginPath();for(let e=0;e<=400;e++){let t=x*e/400;e?b.lineTo(r(t),a-i*o(t)):b.moveTo(r(t),a-i*o(t))}b.stroke();let s=((u*m*d+d/4)%d+d)%d;b.strokeStyle=`#3d47c9`,b.lineWidth=1.5;let c=a-i*1.15;b.beginPath(),b.moveTo(r(s),c),b.lineTo(r(s+d),c),b.stroke(),b.fillStyle=`#3d47c9`,b.font=`600 13px JetBrains Mono`,b.textAlign=`center`,b.fillText(`λ`,r(s+d/2),c-6),b.strokeStyle=`rgba(194,65,79,.35)`,b.setLineDash([2,4]),b.beginPath(),b.moveTo(r(3),a-i*l),b.lineTo(r(3),a+i*l),b.stroke(),b.setLineDash([]),b.fillStyle=`#c2414f`,b.beginPath(),b.arc(r(3),a-i*o(3),8,0,7),b.fill(),b.fillStyle=`#6b6f80`,b.font=`600 12px Figtree`,b.textAlign=`right`,b.fillText(`arah rambat →`,t-30,n-14)}var C=performance.now();function w(e){let t=Math.min(.05,(e-C)/1e3);C=e,f&&!document.hidden&&(m+=t*(p?.25:1),S()),requestAnimationFrame(w)}c(`[data-play]`).addEventListener(`click`,e=>{f=!f,e.target.textContent=f?`Jeda`:`Putar`}),c(`[data-slow]`).addEventListener(`click`,e=>{p=!p,e.target.textContent=p?`Normal`:`Lambat`}),f||(c(`[data-play]`).textContent=`Putar`),new ResizeObserver(S).observe(y),s.querySelectorAll(`input[name="pred"]`).forEach(e=>e.addEventListener(`change`,()=>{let n=+e.value;p=!0,f=!0,c(`[data-slow]`).textContent=`Normal`,c(`[data-play]`).textContent=`Jeda`,c(`[data-s2]`).setAttribute(`aria-disabled`,`false`),c(`[data-obs]`).innerHTML=`<div class="feedback${n===1?` ok`:``}">Lihat titik merah: ia hanya naik dan turun di garis putus-putusnya sendiri. Tebakanmu: ${[`ikut ke kanan`,`naik-turun`,`ke kiri`][n]}.</div>`,c(`[data-s3]`).setAttribute(`aria-disabled`,`false`),c(`[data-exp]`).innerHTML=`<p>Yang berpindah adalah <b>energi</b> dan bentuk gelombangnya, bukan tali. Setiap bagian tali hanya bergetar naik-turun, lalu menggerakkan bagian di sebelahnya. Gelombang yang arah getarnya tegak lurus arah rambatnya disebut <b>gelombang transversal</b>.</p>
+    <p>Hubungan pentingnya: \\(v = \\lambda f\\). <b>Sekarang kamu:</b> naikkan frekuensi dua kali tanpa mengubah λ. Apa yang terjadi pada cepat rambatnya?</p>`,t(c(`[data-exp]`))})),v(),requestAnimationFrame(w);

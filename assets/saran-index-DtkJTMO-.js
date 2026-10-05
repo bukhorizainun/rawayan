@@ -1,0 +1,23 @@
+import{c as e,i as t,n,t as r}from"./shell-DgwTLdl8.js";import{t as i}from"./feedback-link-KP_iDHKW.js";n(`tentang`);var a=document.getElementById(`main`),o=new URLSearchParams(location.search),s=[`saran`,`kesalahan soal`,`kendala teknis`,`ide materi`,`lainnya`],c=[`Siswa`,`Guru`,`Orang tua`,`Lainnya`],l=o.get(`dari`)||``,u=l.split(` (`)[0],d=s.includes(o.get(`jenis`)||``)?o.get(`jenis`):`saran`;a.innerHTML=`
+<div class="page-head wrap">
+  <p class="eyebrow">Saran &amp; masukan</p>
+  <h1>Bantu ${r(e.name)} jadi lebih baik.</h1>
+  <p>Ada soal yang keliru, penjelasan yang membingungkan, atau ide materi baru? Tulis saja di sini. Setiap pesan dibaca langsung oleh pengelola ${r(e.name)}.</p>
+</div>
+<div class="wrap">
+  <form data-form novalidate style="display:grid;gap:var(--s-5);max-width:720px">
+    <div><div class="filters" style="margin:0 0 6px"><div class="label">Jenis</div></div>
+      <div class="tabs" role="radiogroup" aria-label="Jenis masukan" data-types>${s.map(e=>`<button type="button" role="radio" data-v="${e}" aria-pressed="${e===d}" aria-checked="${e===d}">${e[0].toUpperCase()+e.slice(1)}</button>`).join(``)}</div></div>
+    <label class="stack" style="gap:6px"><span class="label filters" style="margin:0"><span class="label">Pesanmu</span></span>
+      <textarea data-pesan rows="6" style="width:100%;border:0;border-radius:var(--r-md);padding:14px 16px;background:color-mix(in srgb, var(--ink) 6%, transparent);resize:vertical" maxlength="2000" required placeholder="${d===`kesalahan soal`?`Soal nomor berapa, dan bagian mana yang menurutmu keliru?`:`Tulis saran atau masukanmu…`}" ></textarea></label>
+    ${l?`<p class="muted" style="font-size:var(--fs-sm)">Halaman yang dimaksud: <span class="mono">${r(l)}</span></p>`:``}
+    <div><div class="filters" style="margin:0 0 6px"><div class="label">Kamu sebagai (boleh dilewati)</div></div>
+      <div class="tabs" data-roles>${c.map(e=>`<button type="button" data-v="${e}" aria-pressed="false">${e}</button>`).join(``)}</div></div>
+    <label class="stack" style="gap:6px"><span class="filters" style="margin:0"><span class="label">Kontak untuk dibalas (boleh dikosongkan)</span></span>
+      <input data-kontak maxlength="120" placeholder="Email atau nama sekolah, jika ingin dihubungi" style="width:100%;border:0;border-radius:var(--r-md);padding:12px 16px;background:color-mix(in srgb, var(--ink) 6%, transparent)"></label>
+    <input data-situs tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" placeholder="Situs web">
+    <p class="muted" style="font-size:var(--fs-xs)">Pesan disimpan di server ${r(e.name)} dan hanya dibaca pengelola. Jangan menulis kata sandi atau data pribadi orang lain.</p>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn btn-primary" type="submit" data-send>Kirim</button>${u?`<a class="btn btn-ghost" href="${r(u)}">Kembali</a>`:``}</div>
+    <p class="feedback" data-status aria-live="polite" hidden></p>
+  </form>
+</div>`;var f=e=>a.querySelector(e),p=d,m=``,h=(e,t)=>f(e).addEventListener(`click`,n=>{let r=n.target.closest(`button[data-v]`);if(!r)return;let i=r.getAttribute(`aria-pressed`)===`true`;f(e).querySelectorAll(`button`).forEach(e=>{e.setAttribute(`aria-pressed`,`false`),e.setAttribute(`aria-checked`,`false`)});let a=e!==`[data-roles]`||!i;r.setAttribute(`aria-pressed`,String(a)),r.setAttribute(`aria-checked`,String(a)),t(a?r.dataset.v:``)});h(`[data-types]`,e=>p=e||`saran`),h(`[data-roles]`,e=>m=e),f(`[data-form]`).addEventListener(`submit`,async e=>{e.preventDefault();let n=f(`[data-pesan]`).value.trim(),a=f(`[data-status]`),o=f(`[data-send]`);if(a.hidden=!1,a.classList.remove(`ok`),n.length<5){a.textContent=`Pesannya masih terlalu pendek.`;return}let s=i();if(!s){a.textContent=`Formulir sedang tidak tersambung ke server. Coba lagi nanti.`;return}o.disabled=!0,a.textContent=`Mengirim…`;try{let e=await fetch(s,{method:`POST`,headers:{"content-type":`application/json`},body:JSON.stringify({jenis:p,pesan:n,halaman:l||document.referrer,peran:m,kontak:f(`[data-kontak]`).value.trim(),situs:f(`[data-situs]`).value})});e.ok?(a.classList.add(`ok`),a.innerHTML=`<b>Terima kasih!</b> Masukanmu sudah terkirim. ${u?`<a href="${r(u)}">Kembali ke halaman tadi</a>`:`<a href="${t(``)}">Kembali ke beranda</a>`}`,f(`[data-pesan]`).value=``):a.textContent=e.status===429?`Kamu sudah mengirim beberapa pesan. Tunggu sekitar 10 menit, lalu coba lagi.`:`Pesan belum terkirim. Coba lagi sebentar lagi.`}catch{a.textContent=`Tidak ada koneksi. Pesanmu belum terkirim; coba lagi saat sudah online.`}finally{o.disabled=!1}});

@@ -1,0 +1,1 @@
+import{i as e}from"./shell-DgwTLdl8.js";var t=`https://rawayan-pasepen.zainun.workers.dev/chat`,n=()=>t.replace(/\/chat$/,`/feedback`);function r(t={}){let n=t.dari??location.pathname+location.search,r=new URLSearchParams({dari:n,...t.jenis?{jenis:t.jenis}:{}});return e(`saran/?`+r.toString())}export{r as n,n as t};
