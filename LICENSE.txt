@@ -1,0 +1,34 @@
+Hak Cipta © 2026 Mochamad Bukhori Zainun. Seluruh hak dilindungi.
+Copyright © 2026 Mochamad Bukhori Zainun. All rights reserved.
+
+Rawayan, termasuk kode sumber dan kode program, materi pelajaran, soal dan pembahasan,
+ilustrasi, desain, ornamen, simulasi, berkas PDF, serta nama dan logo "Rawayan" dan
+"Pasepen", adalah ciptaan yang dilindungi Undang-Undang Republik Indonesia Nomor 28
+Tahun 2014 tentang Hak Cipta dan peraturan hak cipta internasional.
+
+IZIN YANG DIBERIKAN
+Siapa pun boleh mengakses dan memakai situs Rawayan secara gratis untuk belajar dan
+mengajar, termasuk mengunduh dan mencetak PDF untuk dipakai di kelas atau di rumah,
+selama tidak untuk tujuan komersial dan sumbernya disebutkan
+(Rawayan, https://bukhorizainun.github.io/rawayan).
+
+YANG TIDAK DIIZINKAN TANPA IZIN TERTULIS
+1. Menyalin, menggandakan, atau memodifikasi kode program atau situs ini.
+2. Menjual, menerbitkan ulang, atau mendistribusikan materi, soal, ilustrasi, atau PDF,
+   baik utuh maupun sebagian, termasuk dalam buku, aplikasi, atau kursus berbayar.
+3. Membuat karya turunan atau layanan serupa yang memakai bagian dari karya ini.
+4. Memakai nama, logo, atau identitas "Rawayan" dan "Pasepen".
+
+Permohonan izin: https://bukhorizainun.github.io/rawayan/saran/
+
+KOMPONEN PIHAK KETIGA
+Pustaka dan aset pihak ketiga tetap berada di bawah lisensinya masing-masing; lihat
+THIRD_PARTY_NOTICES.txt. Hak cipta di atas tidak berlaku untuk komponen tersebut.
+
+---
+
+English summary: you may use the Rawayan website free of charge for learning and
+non-commercial teaching, including printing its PDFs for class, with attribution.
+Copying the code, republishing or selling the content, creating derivative works or
+similar services, and using the names or logos "Rawayan" and "Pasepen" require prior
+written permission. Third-party components keep their own licenses.

@@ -1,0 +1,17 @@
+import{r as e}from"./shell-DYjwVdE7.js";import{n as t,t as n}from"./param-gak4Rr2I.js";var r=(e,t)=>t?r(t,e%t):e,i=e=>`Rp`+Math.round(e).toLocaleString(`id-ID`);function a(a){a.innerHTML=`
+    <div class="tabs" data-mode><button type="button" data-m="grid" aria-pressed="true">Kotak seratus</button><button type="button" data-m="disc" aria-pressed="false">Diskon</button></div>
+    <div data-grid-tab>
+      <div class="dg-wrap" style="margin-top:12px">
+        <div class="pc-grid" data-cells aria-hidden="true">${`<span class="pc-cell"></span>`.repeat(100)}</div>
+        <div class="dg-read"><b class="tf-num" data-pct></b><span class="tf-name" data-frac></span><span class="tf-split" data-of></span></div>
+      </div>
+      <div data-p1 style="display:grid;gap:12px;margin-top:12px;max-width:520px"></div>
+    </div>
+    <div data-disc-tab hidden>
+      <div data-p2 style="display:grid;gap:12px;margin-top:12px;max-width:520px"></div>
+      <div class="pc-bars" data-bars></div>
+      <p class="feedback" data-sum aria-live="polite"></p>
+    </div>`;let o=e=>a.querySelector(e),s=[...a.querySelectorAll(`.pc-cell`)],c=35,l=t({id:`pc-p`,label:`Persen`,min:0,max:100,step:1,value:35,format:e=>`${e}%`},()=>d()),u=t({id:`pc-n`,label:`dari bilangan`,min:20,max:400,step:10,value:80},()=>d());o(`[data-p1]`).append(l.el,u.el);function d(){let t=l.get(),i=u.get(),a=r(t,100)||100;if(s.forEach((e,n)=>e.classList.toggle(`on`,n<t)),!e())for(let e=Math.min(c,t);e<Math.max(c,t);e++)e<t&&s[e].animate([{transform:`scale(.3)`},{transform:`none`}],{duration:200});c=t,o(`[data-pct]`).textContent=`${t}%`,o(`[data-frac]`).textContent=t===0?`0`:`${t}/100${a>1&&t!==100?` = ${t/a}/${100/a}`:``} = ${n(t/100,2)}`,o(`[data-of]`).innerHTML=`${t}% dari ${i} = ${t}/100 × ${i} = <b>${n(t*i/100,2)}</b>`}let f=t({id:`pc-price`,label:`Harga awal`,min:1e4,max:5e5,step:5e3,value:1e5,format:i},()=>h()),p=t({id:`pc-d1`,label:`Diskon pertama`,min:0,max:90,step:5,value:30,format:e=>`${e}%`},()=>h()),m=t({id:`pc-d2`,label:`Diskon kedua (dari harga setelah diskon pertama)`,min:0,max:50,step:5,value:20,format:e=>`${e}%`},()=>h());o(`[data-p2]`).append(f.el,p.el,m.el);function h(){let e=f.get(),t=p.get(),r=m.get(),a=e*t/100,s=e-a,c=s*r/100,l=s-c,u=(a+c)/e*100,d=t=>`${t/e*100}%`;o(`[data-bars]`).innerHTML=`
+      <div class="pc-row"><span>Harga awal</span><div class="pc-bar"><i class="pc-seg full" style="width:100%">${i(e)}</i></div></div>
+      <div class="pc-row"><span>Setelah diskon ${t}%</span><div class="pc-bar"><i class="pc-seg pay" style="width:${d(s)}">${i(s)}</i><i class="pc-seg cut" style="width:${d(a)}">−${i(a)}</i></div></div>
+      <div class="pc-row"><span>Setelah diskon ${r}% lagi</span><div class="pc-bar"><i class="pc-seg pay" style="width:${d(l)}">${i(l)}</i><i class="pc-seg cut2" style="width:${d(c)}">−${i(c)}</i><i class="pc-seg cut" style="width:${d(a)}"></i></div></div>`,o(`[data-sum]`).innerHTML=r?`Yang dibayar ${i(l)}, yaitu ${n(100-u,1)}% dari harga awal. Total diskonnya <b>${n(u,1)}%</b>, bukan ${t+r}%, karena diskon kedua dihitung dari ${i(s)}, bukan dari ${i(e)}.`:`Yang dibayar ${i(l)}, yaitu ${100-t}% dari harga awal. Potongannya ${i(a)}.`}o(`[data-mode]`).addEventListener(`click`,e=>{let t=e.target.closest(`[data-m]`);t&&(a.querySelectorAll(`[data-mode] button`).forEach(e=>e.setAttribute(`aria-pressed`,String(e===t))),o(`[data-grid-tab]`).hidden=t.dataset.m!==`grid`,o(`[data-disc-tab]`).hidden=t.dataset.m!==`disc`)}),d(),h()}export{a as mount};
