@@ -1,0 +1,16 @@
+{
+  "name": "Rawayan · Dari penasaran ke paham",
+  "short_name": "Rawayan",
+  "description": "Matematika, sains, bahasa Inggris, serta koding dan AI yang bisa kamu lihat, jelajahi, dan pahami.",
+  "lang": "id",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf8f3",
+  "theme_color": "#faf8f3",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
